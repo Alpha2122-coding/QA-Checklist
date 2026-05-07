@@ -1,0 +1,4599 @@
+{
+  "v": 14,
+  "timer": 0,
+  "projects": [
+    {
+      "id": "default",
+      "name": "Default Project",
+      "desc": "",
+      "created": "2026-05-07"
+    }
+  ],
+  "currentProject": "default",
+  "currentCycle": 1,
+  "cycles": {
+    "default": [
+      {
+        "num": 1,
+        "date": "2026-05-07",
+        "name": "Cycle 1"
+      }
+    ]
+  },
+  "history": {},
+  "portfolio": [],
+  "automation": [],
+  "sheet": [],
+  "worksheet": [],
+  "categories": [
+    {
+      "id": "w-login",
+      "icon": "🔐",
+      "name": "Login & Authentication",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wl01",
+          "name": "Valid credentials login",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl02",
+          "name": "Invalid username error",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl03",
+          "name": "Invalid password error",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl04",
+          "name": "Empty username prevented",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl05",
+          "name": "Empty password prevented",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl06",
+          "name": "Both empty blocked",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl07",
+          "name": "Show/hide password toggle",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl08",
+          "name": "Forgot password link",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl09",
+          "name": "Reset email delivered",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl10",
+          "name": "Reset link functional",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl11",
+          "name": "Account lockout",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl12",
+          "name": "Session timeout",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl13",
+          "name": "Logout clears session",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl14",
+          "name": "Back after logout safe",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl15",
+          "name": "Remember me",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl16",
+          "name": "Two-factor auth",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl17",
+          "name": "Social login",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl18",
+          "name": "CAPTCHA",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl19",
+          "name": "Multi-tab login",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wl20",
+          "name": "Password history",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-reg",
+      "icon": "📋",
+      "name": "Registration",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wr01",
+          "name": "Valid signup",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr02",
+          "name": "Dup email rejected",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr03",
+          "name": "Dup username rejected",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr04",
+          "name": "Weak password rejected",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr05",
+          "name": "Password mismatch",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr06",
+          "name": "Required fields",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr07",
+          "name": "Optional allowed",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr08",
+          "name": "Terms required",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr09",
+          "name": "Privacy link",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr10",
+          "name": "Verification sent",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr11",
+          "name": "Verification works",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr12",
+          "name": "Expired link",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr13",
+          "name": "Resend verification",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr14",
+          "name": "Phone validated",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr15",
+          "name": "DOB no future",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr16",
+          "name": "Age restriction",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr17",
+          "name": "Whitespace trimmed",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr18",
+          "name": "Unicode names",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr19",
+          "name": "Strength meter",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wr20",
+          "name": "Welcome email",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-forms",
+      "icon": "📝",
+      "name": "Form Validation",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wf01",
+          "name": "Required empty submit",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf02",
+          "name": "Inline blur",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf03",
+          "name": "Valid email",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf04",
+          "name": "Invalid email",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf05",
+          "name": "Multiple @",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf06",
+          "name": "Phone format",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf07",
+          "name": "Max length",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf08",
+          "name": "Min length",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf09",
+          "name": "Numeric rejects alpha",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf10",
+          "name": "Alpha rejects num",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf11",
+          "name": "Negative rejected",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf12",
+          "name": "Decimal",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf13",
+          "name": "Special chars",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf14",
+          "name": "Emoji",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf15",
+          "name": "Copy-paste",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf16",
+          "name": "Autofill",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf17",
+          "name": "Invalid date",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf18",
+          "name": "Future date",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf19",
+          "name": "Past date",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf20",
+          "name": "Leap year",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf21",
+          "name": "Dropdown default",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf22",
+          "name": "Multi-select",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf23",
+          "name": "Checkbox",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf24",
+          "name": "Radio",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf25",
+          "name": "Double submit",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf26",
+          "name": "Success msg",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf27",
+          "name": "Errors",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf28",
+          "name": "Reset button",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf29",
+          "name": "Errors clear",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wf30",
+          "name": "Tab order",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-nav",
+      "icon": "🧭",
+      "name": "Navigation",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wn01",
+          "name": "Primary links",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn02",
+          "name": "Dropdown links",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn03",
+          "name": "Footer links",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn04",
+          "name": "Logo home",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn05",
+          "name": "Back button",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn06",
+          "name": "Forward",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn07",
+          "name": "Refresh state",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn08",
+          "name": "Deep links",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn09",
+          "name": "Breadcrumbs",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn10",
+          "name": "Active highlight",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn11",
+          "name": "404 page",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn12",
+          "name": "Protected redirect",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn13",
+          "name": "Auth redirect",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn14",
+          "name": "Unsaved warning",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn15",
+          "name": "External tab",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn16",
+          "name": "No broken links",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn17",
+          "name": "Skip content",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn18",
+          "name": "Mobile menu",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn19",
+          "name": "Mobile nav closes",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wn20",
+          "name": "Anchor scroll",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-crud",
+      "icon": "💾",
+      "name": "Data Operations",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wc01",
+          "name": "Create saves",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc02",
+          "name": "In list",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc03",
+          "name": "List correct",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc04",
+          "name": "Detail correct",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc05",
+          "name": "Empty state",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc06",
+          "name": "Update persists",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc07",
+          "name": "Cancel discards",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc08",
+          "name": "Concurrent edit",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc09",
+          "name": "Delete confirm",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc10",
+          "name": "Delete removes",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc11",
+          "name": "Cancel keeps",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc12",
+          "name": "Bulk select",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc13",
+          "name": "Bulk delete",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc14",
+          "name": "Dup prevented",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc15",
+          "name": "Special chars",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc16",
+          "name": "Long text",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc17",
+          "name": "Timestamps",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc18",
+          "name": "Soft delete",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc19",
+          "name": "Undo delete",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wc20",
+          "name": "Inline edit",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-search",
+      "icon": "🔎",
+      "name": "Search & Filters",
+      "module": "web",
+      "tests": [
+        {
+          "id": "ws01",
+          "name": "Full keyword",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws02",
+          "name": "Partial",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws03",
+          "name": "Case insensitive",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws04",
+          "name": "No results",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws05",
+          "name": "Special chars",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws06",
+          "name": "Clear restores",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws07",
+          "name": "Min chars",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws08",
+          "name": "Enter triggers",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws09",
+          "name": "Live search",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws10",
+          "name": "Single filter",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws11",
+          "name": "Multi filter",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws12",
+          "name": "Search+filter",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws13",
+          "name": "Clear all",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws14",
+          "name": "Date range",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws15",
+          "name": "Range error",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws16",
+          "name": "Numeric range",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws17",
+          "name": "Count",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws18",
+          "name": "Sort+filter",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws19",
+          "name": "Saved searches",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ws20",
+          "name": "Large data",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-ux",
+      "icon": "🎨",
+      "name": "UX & Interactions",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wu01",
+          "name": "Loading",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu02",
+          "name": "Success notif",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu03",
+          "name": "Error notif",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu04",
+          "name": "Warning dialog",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu05",
+          "name": "Modal open/close",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu06",
+          "name": "Backdrop closes",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu07",
+          "name": "Escape closes",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu08",
+          "name": "Focus trapped",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu09",
+          "name": "Outside click",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu10",
+          "name": "Disabled btn",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu11",
+          "name": "Tooltips",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu12",
+          "name": "Copy clipboard",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu13",
+          "name": "Drag drop",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu14",
+          "name": "Theme toggle",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu15",
+          "name": "Theme persist",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu16",
+          "name": "Toast dismiss",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu17",
+          "name": "Toasts stack",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu18",
+          "name": "Infinite scroll",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu19",
+          "name": "Back to top",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wu20",
+          "name": "Hover states",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-resp",
+      "icon": "📱",
+      "name": "Responsive",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wrp01",
+          "name": "320px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp02",
+          "name": "375px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp03",
+          "name": "414px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp04",
+          "name": "768px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp05",
+          "name": "1024px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp06",
+          "name": "1280px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp07",
+          "name": "1440px",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp08",
+          "name": "1920px",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp09",
+          "name": "No h-scroll",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp10",
+          "name": "Touch 44px",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp11",
+          "name": "Images scale",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp12",
+          "name": "Tables scroll",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp13",
+          "name": "Fonts legible",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp14",
+          "name": "Modal fits",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp15",
+          "name": "Keyboard hide",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wrp16",
+          "name": "Orientation",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-browser",
+      "icon": "🌐",
+      "name": "Browser",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wb01",
+          "name": "Chrome latest",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb02",
+          "name": "Chrome prev",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb03",
+          "name": "Firefox",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb04",
+          "name": "Safari",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb05",
+          "name": "Safari dates",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb06",
+          "name": "Edge",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb07",
+          "name": "Chrome mobile",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb08",
+          "name": "Safari iOS",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb09",
+          "name": "Samsung",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb10",
+          "name": "Zoom 150%",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb11",
+          "name": "Zoom 200%",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb12",
+          "name": "Incognito",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb13",
+          "name": "Cookies disabled",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb14",
+          "name": "Autofill",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wb15",
+          "name": "Ad blocker",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-a11y",
+      "icon": "♿",
+      "name": "Accessibility",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wa01",
+          "name": "Keyboard nav",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa02",
+          "name": "Focus visible",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa03",
+          "name": "Focus order",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa04",
+          "name": "No trap",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa05",
+          "name": "Modal trap",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa06",
+          "name": "Labels",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa07",
+          "name": "Error aria",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa08",
+          "name": "Alt text",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa09",
+          "name": "Decorative alt",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa10",
+          "name": "Contrast 4.5",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa11",
+          "name": "Contrast 3",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa12",
+          "name": "Not color only",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa13",
+          "name": "Resize 200%",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa14",
+          "name": "Page title",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa15",
+          "name": "Heading",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa16",
+          "name": "Landmarks",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa17",
+          "name": "Skip content",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa18",
+          "name": "Dynamic",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa19",
+          "name": "Button names",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa20",
+          "name": "Link text",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa21",
+          "name": "Reduced motion",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wa22",
+          "name": "No flash",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-sec",
+      "icon": "🔒",
+      "name": "Security",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wse01",
+          "name": "Unauth redirect",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse02",
+          "name": "Others data",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse03",
+          "name": "Admin hidden",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse04",
+          "name": "Role visibility",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse05",
+          "name": "Pass not source",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse06",
+          "name": "Not URL",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse07",
+          "name": "Generic errors",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse08",
+          "name": "Exe blocked",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse09",
+          "name": "Oversized",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse10",
+          "name": "HTTPS",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse11",
+          "name": "Session cleared",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse12",
+          "name": "Reset single",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse13",
+          "name": "IDOR",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse14",
+          "name": "No escalation",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse15",
+          "name": "CORS",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wse16",
+          "name": "Rate limit",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-perf",
+      "icon": "⚡",
+      "name": "Performance",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wp01",
+          "name": "Load < 3s",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp02",
+          "name": "3G < 6s",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp03",
+          "name": "No CLS",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp04",
+          "name": "Search < 1s",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp05",
+          "name": "1000+ no freeze",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp06",
+          "name": "Images < 2s",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp07",
+          "name": "Smooth scroll",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wp08",
+          "name": "No mem leak",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-err",
+      "icon": "⚠️",
+      "name": "Error Handling",
+      "module": "web",
+      "tests": [
+        {
+          "id": "we01",
+          "name": "Network loss",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we02",
+          "name": "Recovery",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we03",
+          "name": "500 friendly",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we04",
+          "name": "Timeout",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we05",
+          "name": "Slow loader",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we06",
+          "name": "Form preserved",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we07",
+          "name": "404 nav",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we08",
+          "name": "Dup blocked",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we09",
+          "name": "Session warn",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "we10",
+          "name": "No resubmit",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-upload",
+      "icon": "📁",
+      "name": "File Upload",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wup01",
+          "name": "Valid uploads",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup02",
+          "name": "Invalid rejected",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup03",
+          "name": "Oversized",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup04",
+          "name": "Zero byte",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup05",
+          "name": "Multiple",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup06",
+          "name": "Drag drop",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup07",
+          "name": "Progress",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup08",
+          "name": "Cancel",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup09",
+          "name": "In list",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup10",
+          "name": "Dup filename",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup11",
+          "name": "Special chars",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup12",
+          "name": "Preview",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup13",
+          "name": "Download correct",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup14",
+          "name": "Not corrupted",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup15",
+          "name": "Filename",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wup16",
+          "name": "Delete file",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-page",
+      "icon": "📄",
+      "name": "Pagination",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wpg01",
+          "name": "First page",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg02",
+          "name": "Next",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg03",
+          "name": "Prev",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg04",
+          "name": "Last",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg05",
+          "name": "Prev disabled",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg06",
+          "name": "Next disabled",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg07",
+          "name": "Per page",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg08",
+          "name": "Total",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg09",
+          "name": "Filter kept",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg10",
+          "name": "Search kept",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg11",
+          "name": "Sort asc",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg12",
+          "name": "Sort desc",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg13",
+          "name": "Sort toggle",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg14",
+          "name": "Null consistent",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpg15",
+          "name": "Sort indicator",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-checkout",
+      "icon": "🛒",
+      "name": "Checkout",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wco01",
+          "name": "Add cart",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco02",
+          "name": "Remove cart",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco03",
+          "name": "Cart total",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco04",
+          "name": "Coupon",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco05",
+          "name": "Invalid coupon",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco06",
+          "name": "Shipping",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco07",
+          "name": "Tax",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco08",
+          "name": "Summary",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco09",
+          "name": "Guest checkout",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco10",
+          "name": "Valid pay",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco11",
+          "name": "Invalid pay",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco12",
+          "name": "Confirmation",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco13",
+          "name": "Email sent",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco14",
+          "name": "Out of stock",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco15",
+          "name": "Qty stock",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco16",
+          "name": "Double pay",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco17",
+          "name": "Cart persists",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco18",
+          "name": "Multi methods",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wco19",
+          "name": "Order history",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-profile",
+      "icon": "👤",
+      "name": "User Profile",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wpr01",
+          "name": "Data correct",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr02",
+          "name": "Name saves",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr03",
+          "name": "Email verify",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr04",
+          "name": "Old pass",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr05",
+          "name": "Strength",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr06",
+          "name": "Avatar",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr07",
+          "name": "Notif prefs",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr08",
+          "name": "Privacy",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr09",
+          "name": "Delete confirm",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr10",
+          "name": "Deleted no login",
+          "priority": "critical",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr11",
+          "name": "Activity log",
+          "priority": "low",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wpr12",
+          "name": "Connected",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-email",
+      "icon": "📧",
+      "name": "Email",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wem01",
+          "name": "Welcome",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem02",
+          "name": "Reset",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem03",
+          "name": "Links work",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem04",
+          "name": "Gmail",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem05",
+          "name": "Outlook",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem06",
+          "name": "Unsubscribe",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem07",
+          "name": "In-app count",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem08",
+          "name": "Mark read",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem09",
+          "name": "Mark all",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem10",
+          "name": "Personal",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wem11",
+          "name": "Not spam",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "w-i18n",
+      "icon": "🌍",
+      "name": "i18n",
+      "module": "web",
+      "tests": [
+        {
+          "id": "wi01",
+          "name": "Language",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi02",
+          "name": "Translated",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi03",
+          "name": "Date locale",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi04",
+          "name": "12/24h",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi05",
+          "name": "Currency",
+          "priority": "high",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi06",
+          "name": "RTL",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi07",
+          "name": "Unicode",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi08",
+          "name": "Long text",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi09",
+          "name": "Decimal",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "wi10",
+          "name": "Thousands",
+          "priority": "medium",
+          "module": "web",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-install",
+      "icon": "📲",
+      "name": "Installation",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ai01",
+          "name": "Install",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai02",
+          "name": "Launch",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai03",
+          "name": "Splash",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai04",
+          "name": "Icon",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai05",
+          "name": "Name",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai06",
+          "name": "Update",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai07",
+          "name": "Uninstall",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai08",
+          "name": "Reinstall",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai09",
+          "name": "Size",
+          "priority": "low",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai10",
+          "name": "Onboard",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ai11",
+          "name": "Skip onboard",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-auth",
+      "icon": "🔐",
+      "name": "App Auth",
+      "module": "app",
+      "tests": [
+        {
+          "id": "aa01",
+          "name": "Login",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa02",
+          "name": "Invalid",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa03",
+          "name": "Biometric",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa04",
+          "name": "PIN",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa05",
+          "name": "Auto-login",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa06",
+          "name": "Forgot",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa07",
+          "name": "Session bg",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa08",
+          "name": "Timeout",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa09",
+          "name": "Logout",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa10",
+          "name": "Multi acc",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa11",
+          "name": "Social",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aa12",
+          "name": "Bio fallback",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-nav",
+      "icon": "🧭",
+      "name": "App Nav",
+      "module": "app",
+      "tests": [
+        {
+          "id": "an01",
+          "name": "Tabs",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an02",
+          "name": "Drawer",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an03",
+          "name": "Back",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an04",
+          "name": "HW back",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an05",
+          "name": "iOS swipe",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an06",
+          "name": "Deep link",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an07",
+          "name": "Push screen",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an08",
+          "name": "No stack",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an09",
+          "name": "Tab state",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "an10",
+          "name": "Scroll",
+          "priority": "low",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-offline",
+      "icon": "📡",
+      "name": "Offline",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ao01",
+          "name": "Indicator",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao02",
+          "name": "Core offline",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao03",
+          "name": "Sync",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao04",
+          "name": "Slow",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao05",
+          "name": "Airplane",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao06",
+          "name": "WiFi to cell",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao07",
+          "name": "Timeout",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao08",
+          "name": "Queue",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao09",
+          "name": "Cache",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ao10",
+          "name": "No dup",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-notif",
+      "icon": "🔔",
+      "name": "Notifications",
+      "module": "app",
+      "tests": [
+        {
+          "id": "apn01",
+          "name": "Foreground",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn02",
+          "name": "Background",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn03",
+          "name": "Killed",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn04",
+          "name": "Tap screen",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn05",
+          "name": "Badge",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn06",
+          "name": "Sound",
+          "priority": "low",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn07",
+          "name": "Rich",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn08",
+          "name": "Opt-out",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn09",
+          "name": "Local",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "apn10",
+          "name": "Clear",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-perm",
+      "icon": "🔑",
+      "name": "Permissions",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ap01",
+          "name": "Camera ask",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap02",
+          "name": "Camera works",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap03",
+          "name": "Gallery",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap04",
+          "name": "Location ask",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap05",
+          "name": "Location works",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap06",
+          "name": "Mic",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap07",
+          "name": "Contacts",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap08",
+          "name": "Denied",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap09",
+          "name": "Revoked",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ap10",
+          "name": "No unnecessary",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-gesture",
+      "icon": "👆",
+      "name": "Gestures",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ag01",
+          "name": "Single tap",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag02",
+          "name": "No double",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag03",
+          "name": "Long press",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag04",
+          "name": "Swipe",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag05",
+          "name": "Pull refresh",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag06",
+          "name": "Pinch",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag07",
+          "name": "Scroll",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag08",
+          "name": "Touch 44pt",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ag09",
+          "name": "Swipe del",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-device",
+      "icon": "📱",
+      "name": "Devices",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ad01",
+          "name": "Small",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad02",
+          "name": "Standard",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad03",
+          "name": "Large",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad04",
+          "name": "Tablet",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad05",
+          "name": "Notch",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad06",
+          "name": "Density",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad07",
+          "name": "Android new",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad08",
+          "name": "Android prev",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad09",
+          "name": "iOS new",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ad10",
+          "name": "iOS prev",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-bg",
+      "icon": "🔄",
+      "name": "Background",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ab01",
+          "name": "Resume",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab02",
+          "name": "State kept",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab03",
+          "name": "Long bg",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab04",
+          "name": "Call no crash",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab05",
+          "name": "Switch",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab06",
+          "name": "Memory",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab07",
+          "name": "Lock",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab08",
+          "name": "Orientation",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ab09",
+          "name": "OS kill",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-perf",
+      "icon": "⚡",
+      "name": "App Perf",
+      "module": "app",
+      "tests": [
+        {
+          "id": "ape01",
+          "name": "Launch < 3s",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape02",
+          "name": "Smooth",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape03",
+          "name": "Large list",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape04",
+          "name": "Placeholder",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape05",
+          "name": "No leak",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape06",
+          "name": "Battery",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape07",
+          "name": "Size",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "ape08",
+          "name": "No ANR",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-camera",
+      "icon": "📷",
+      "name": "Camera",
+      "module": "app",
+      "tests": [
+        {
+          "id": "acm01",
+          "name": "Capture",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm02",
+          "name": "Preview",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm03",
+          "name": "Switch",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm04",
+          "name": "Flash",
+          "priority": "low",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm05",
+          "name": "Video",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm06",
+          "name": "Gallery",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm07",
+          "name": "Crop",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "acm08",
+          "name": "Compress",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    },
+    {
+      "id": "a-update",
+      "icon": "🆕",
+      "name": "Updates",
+      "module": "app",
+      "tests": [
+        {
+          "id": "aup01",
+          "name": "Force",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aup02",
+          "name": "Optional",
+          "priority": "medium",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aup03",
+          "name": "No loss",
+          "priority": "critical",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aup04",
+          "name": "Features",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        },
+        {
+          "id": "aup05",
+          "name": "Backward",
+          "priority": "high",
+          "module": "app",
+          "status": "pending",
+          "notes": "",
+          "changedAt": null,
+          "changedDate": null
+        }
+      ]
+    }
+  ],
+  "lastUpdatedAt": "2026-05-07T11:30:23.323Z"
+}
