@@ -1,11 +1,14 @@
 {
   "name": "qa-checklist-pro",
-  "version": "2.0.0",
-  "description": "QA Checklist with Authentication & API",
+  "version": "2.1.0",
+  "description": "QA Checklist with Authentication & API - Enhanced Security",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "jest --coverage --detectOpenHandles --forceExit",
+    "test:watch": "jest --watch",
+    "test:security": "npm audit && node security-test.js"
   },
   "dependencies": {
     "express": "^4.18.2",
@@ -13,6 +16,26 @@
     "jsonwebtoken": "^9.0.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "csurf": "^1.11.0",
+    "express-validator": "^7.0.1",
+    "winston": "^3.11.0",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "server.js",
+      "public/script.js"
+    ],
+    "testTimeout": 10000
   }
 }

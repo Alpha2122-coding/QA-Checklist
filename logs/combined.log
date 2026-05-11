@@ -1,0 +1,3 @@
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-11T07:16:38.746Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-11T07:16:43.530Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-11T07:18:46.713Z"}
