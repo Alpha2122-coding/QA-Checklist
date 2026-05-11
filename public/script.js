@@ -742,7 +742,7 @@ function wireApp(){
   var rs=$('#roleSave');if(rs)rs.addEventListener('click',async function(){if(!roleChangeUserId)return;showLoading();var r=await api('PUT','/api/users/'+roleChangeUserId+'/role',{role:$('#roleSelect').value});hideLoading();if(r.ok){toast('success','Updated',r.msg||'Done');closeM('mRole');renderUsers();}else toast('danger','Error',r.msg);roleChangeUserId=null;});
   var ur=$('#umRefresh');if(ur)ur.addEventListener('click',renderUsers);
   var restoreBtn=$('#restoreSessionBtn');if(restoreBtn)restoreBtn.addEventListener('click',function(){restorePreviousDraft();});
-  var discardBtn=$('#discardSessionBtn');if(discardBtn)discardBtn.addEventListener('click',function(){discardPreviousDraft();});
+  var discardBtn=$('#mRestore [data-c="mRestore"]');if(discardBtn)discardBtn.addEventListener('click',function(){discardPreviousDraft();});
   var psl=$('#projSel');if(psl)psl.addEventListener('change',function(e){state.currentProject=e.target.value;state.currentCycle=1;save();updProjDisp();render();});
   var pn=$('#pNew');if(pn)pn.addEventListener('click',newProj);var pe=$('#pEdit');if(pe)pe.addEventListener('click',editProj);var pd=$('#pDel');if(pd)pd.addEventListener('click',delProj);var psv=$('#pSv');if(psv)psv.addEventListener('click',saveProj);
   var csl=$('#cycSel');if(csl)csl.addEventListener('change',function(e){state.currentCycle=parseInt(e.target.value)||1;save();popCyc();});
