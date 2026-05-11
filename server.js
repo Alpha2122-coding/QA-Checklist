@@ -11,7 +11,28 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const JWT_SECRET = process.env.JWT_SECRET || 'qa-checklist-secret-key-change-in-production-' + Date.now();
+// Stable JWT secret (prevents logouts after server restart)
+const JWT_SECRET_FILE = path.join(__dirname, 'data', 'jwt_secret.txt');
+function getJwtSecret() {
+  if (process.env.JWT_SECRET) return process.env.JWT_SECRET;
+  try {
+    if (fs.existsSync(JWT_SECRET_FILE)) {
+      const v = fs.readFileSync(JWT_SECRET_FILE, 'utf8').trim();
+      if (v) return v;
+    }
+  } catch (e) {
+    console.error('Failed reading JWT secret file:', e.message);
+  }
+  const secret = 'qa-checklist-secret-' + uuidv4() + '-' + uuidv4();
+  try {
+    fs.mkdirSync(path.dirname(JWT_SECRET_FILE), { recursive: true });
+    fs.writeFileSync(JWT_SECRET_FILE, secret, 'utf8');
+  } catch (e) {
+    console.error('Failed writing JWT secret file:', e.message);
+  }
+  return secret;
+}
+const JWT_SECRET = getJwtSecret();
 const JWT_EXPIRE = '7d';
 const SESSION_TIMEOUT_MINUTES = 30;
 const SESSION_INACTIVITY_MS = SESSION_TIMEOUT_MINUTES * 60 * 1000;
@@ -108,7 +129,12 @@ function saveUserData(userId, data) {
 initUsers();
 
 // ===================== MIDDLEWARE =====================
-app.use(cors({ origin: true, credentials: true }));
+// CORS: allow same-origin by default. Override with CORS_ORIGIN="http://localhost:xxxx" if needed.
+const CORS_ORIGIN = process.env.CORS_ORIGIN;
+app.use(cors({
+  origin: CORS_ORIGIN ? CORS_ORIGIN : (origin, cb) => cb(null, true),
+  credentials: true
+}));
 app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
