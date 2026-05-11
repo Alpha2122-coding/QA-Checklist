@@ -1,12 +1,12 @@
 {
   "v": 14,
-  "timer": 0,
+  "timer": 369,
   "projects": [
     {
       "id": "default",
       "name": "Default Project",
       "desc": "",
-      "created": "2026-05-07"
+      "created": "2026-05-11"
     }
   ],
   "currentProject": "default",
@@ -15,15 +15,259 @@
     "default": [
       {
         "num": 1,
-        "date": "2026-05-07",
+        "date": "2026-05-11",
         "name": "Cycle 1"
       }
     ]
   },
-  "history": {},
-  "portfolio": [],
+  "history": {
+    "2026-05-11": [
+      {
+        "testId": "wl01",
+        "testName": "Valid credentials login",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl02",
+        "testName": "Invalid username error",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl03",
+        "testName": "Invalid password error",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl04",
+        "testName": "Empty username prevented",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl05",
+        "testName": "Empty password prevented",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl06",
+        "testName": "Both empty blocked",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl07",
+        "testName": "Show/hide password toggle",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl08",
+        "testName": "Forgot password link",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl09",
+        "testName": "Reset email delivered",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl10",
+        "testName": "Reset link functional",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl11",
+        "testName": "Account lockout",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl12",
+        "testName": "Session timeout",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl13",
+        "testName": "Logout clears session",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl14",
+        "testName": "Back after logout safe",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl15",
+        "testName": "Remember me",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl16",
+        "testName": "Two-factor auth",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl17",
+        "testName": "Social login",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl18",
+        "testName": "CAPTCHA",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:04",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl19",
+        "testName": "Multi-tab login",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:05",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wl20",
+        "testName": "Password history",
+        "category": "Login & Authentication",
+        "status": "passed",
+        "time": "11:05",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wr01",
+        "testName": "Valid signup",
+        "category": "Registration",
+        "status": "passed",
+        "time": "11:18",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wr02",
+        "testName": "Dup email rejected",
+        "category": "Registration",
+        "status": "passed",
+        "time": "11:18",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wr03",
+        "testName": "Dup username rejected",
+        "category": "Registration",
+        "status": "passed",
+        "time": "11:18",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wr04",
+        "testName": "Weak password rejected",
+        "category": "Registration",
+        "status": "passed",
+        "time": "11:18",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wr05",
+        "testName": "Password mismatch",
+        "category": "Registration",
+        "status": "passed",
+        "time": "11:18",
+        "user": "Admin Manager"
+      },
+      {
+        "testId": "wr06",
+        "testName": "Required fields",
+        "category": "Registration",
+        "status": "passed",
+        "time": "11:18",
+        "user": "Admin Manager"
+      }
+    ]
+  },
+  "portfolio": [
+    {
+      "id": "port-mp0rrxs5-utgz",
+      "name": "Sainik Sahayta",
+      "type": "web",
+      "status": "completed",
+      "tc": 4,
+      "bugs": 112,
+      "remarks": "Testing the project"
+    },
+    {
+      "id": "port-mp0rs9oc-pywx",
+      "name": "sfdfgdfg <>><<>",
+      "type": "web",
+      "status": "in-progress",
+      "tc": 0,
+      "bugs": 0,
+      "remarks": ""
+    }
+  ],
   "automation": [],
-  "sheet": [],
+  "sheet": [
+    {
+      "id": "sh-mp0s0m31-0kr9",
+      "name": "Sainik Sahayta",
+      "type": "web",
+      "status": "testing",
+      "received": "2026-03-12",
+      "mailed": "2026-05-01",
+      "started": "2026-03-16",
+      "submitted": "2026-04-29",
+      "cycles": 2,
+      "bugs": 112,
+      "remarks": ""
+    }
+  ],
   "worksheet": [],
   "categories": [
     {
@@ -37,200 +281,200 @@
           "name": "Valid credentials login",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:40.214Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl02",
           "name": "Invalid username error",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:41.446Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl03",
           "name": "Invalid password error",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:42.294Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl04",
           "name": "Empty username prevented",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:43.517Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl05",
           "name": "Empty password prevented",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:45.366Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl06",
           "name": "Both empty blocked",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:46.150Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl07",
           "name": "Show/hide password toggle",
           "priority": "medium",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:49.774Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl08",
           "name": "Forgot password link",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:50.510Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl09",
           "name": "Reset email delivered",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:51.302Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl10",
           "name": "Reset link functional",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:51.848Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl11",
           "name": "Account lockout",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:53.078Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl12",
           "name": "Session timeout",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:55.750Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl13",
           "name": "Logout clears session",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:56.308Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl14",
           "name": "Back after logout safe",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:57.046Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl15",
           "name": "Remember me",
           "priority": "medium",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:57.848Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl16",
           "name": "Two-factor auth",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:58.518Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl17",
           "name": "Social login",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:59.247Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl18",
           "name": "CAPTCHA",
           "priority": "medium",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:34:59.934Z",
+          "changedDate": "11 May 11:04"
         },
         {
           "id": "wl19",
           "name": "Multi-tab login",
           "priority": "medium",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:35:00.942Z",
+          "changedDate": "11 May 11:05"
         },
         {
           "id": "wl20",
           "name": "Password history",
           "priority": "medium",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:35:01.694Z",
+          "changedDate": "11 May 11:05"
         }
       ]
     },
@@ -245,60 +489,60 @@
           "name": "Valid signup",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:48:50.978Z",
+          "changedDate": "11 May 11:18"
         },
         {
           "id": "wr02",
           "name": "Dup email rejected",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:48:51.421Z",
+          "changedDate": "11 May 11:18"
         },
         {
           "id": "wr03",
           "name": "Dup username rejected",
           "priority": "critical",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:48:52.563Z",
+          "changedDate": "11 May 11:18"
         },
         {
           "id": "wr04",
           "name": "Weak password rejected",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:48:53.386Z",
+          "changedDate": "11 May 11:18"
         },
         {
           "id": "wr05",
           "name": "Password mismatch",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:48:54.482Z",
+          "changedDate": "11 May 11:18"
         },
         {
           "id": "wr06",
           "name": "Required fields",
           "priority": "high",
           "module": "web",
-          "status": "pending",
+          "status": "passed",
           "notes": "",
-          "changedAt": null,
-          "changedDate": null
+          "changedAt": "2026-05-11T05:48:56.426Z",
+          "changedDate": "11 May 11:18"
         },
         {
           "id": "wr07",
@@ -4595,5 +4839,5 @@
       ]
     }
   ],
-  "lastUpdatedAt": "2026-05-07T11:30:23.323Z"
+  "lastUpdatedAt": "2026-05-11T05:55:23.900Z"
 }
