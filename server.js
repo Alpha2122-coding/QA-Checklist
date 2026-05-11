@@ -274,7 +274,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
 }));
 
 // ===================== AUTH MIDDLEWARE =====================
-function authMiddleware(req, res, next) {
+async function authMiddleware(req, res, next) {
   let token = req.cookies.qa_token;
   if (!token) {
     const authHeader = req.headers.authorization;
@@ -294,7 +294,7 @@ function authMiddleware(req, res, next) {
     }
 
     // Check if user exists and is approved
-    const users = getUsers();
+    const users = await getUsers();
     const user = users.find(u => u.id === decoded.userId);
     if (!user) {
       return res.status(401).json({ ok: false, msg: 'User not found' });
@@ -304,7 +304,7 @@ function authMiddleware(req, res, next) {
     }
 
     // Validate session
-    const sessions = cleanExpiredSessions();
+    const sessions = await cleanExpiredSessions();
     const session = sessions.find(s => s.sessionId === decoded.sessionId && s.userId === user.id);
     if (!session) {
       return res.status(401).json({ ok: false, msg: 'Session expired or invalid. Please sign in again.' });
@@ -315,13 +315,13 @@ function authMiddleware(req, res, next) {
     const lastActivity = new Date(session.lastActivity || session.createdAt);
     if (now - lastActivity > SESSION_INACTIVITY_MS) {
       const remaining = sessions.filter(s => s.sessionId !== session.sessionId);
-      saveSessions(remaining);
+      await saveSessions(remaining);
       return res.status(401).json({ ok: false, msg: 'Session timed out' });
     }
 
     // Update last activity
     session.lastActivity = now.toISOString();
-    saveSessions(sessions);
+    await saveSessions(sessions);
 
     req.user = user;
     req.userId = user.id;

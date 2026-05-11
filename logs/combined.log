@@ -1,3 +1,17 @@
 {"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-11T07:16:38.746Z"}
 {"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-11T07:16:43.530Z"}
 {"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-11T07:18:46.713Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-11T07:25:07.672Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
+{"error":"users.find is not a function","level":"warn","message":"Token verification failed","timestamp":"2026-05-11T07:25:07.677Z"}
+{"error":"users.find is not a function","level":"warn","message":"Token verification failed","timestamp":"2026-05-11T07:25:07.687Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-11T07:25:09.253Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
+{"error":"users.find is not a function","level":"warn","message":"Token verification failed","timestamp":"2026-05-11T07:25:09.258Z"}
+{"error":"users.find is not a function","level":"warn","message":"Token verification failed","timestamp":"2026-05-11T07:25:09.259Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-11T07:25:11.412Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
+{"error":"users.find is not a function","level":"warn","message":"Token verification failed","timestamp":"2026-05-11T07:25:11.416Z"}
+{"error":"users.find is not a function","level":"warn","message":"Token verification failed","timestamp":"2026-05-11T07:25:11.416Z"}
+{"level":"info","message":"SIGINT received, shutting down gracefully","timestamp":"2026-05-11T07:25:56.980Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-11T07:29:44.583Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-11T07:30:41.614Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
+{"email":"testuser2@example.com","level":"info","message":"User registered","timestamp":"2026-05-11T07:31:36.390Z","userId":"1ba21f9a-160c-4459-886b-4e15d226623d"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-11T07:33:46.419Z"}
