@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/2532</span>
+                <span class='fraction'>0/2535</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1642</span>
+                <span class='fraction'>0/1651</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/514</span>
+                <span class='fraction'>0/521</span>
             </div>
         
             
@@ -936,7 +936,21 @@
 <a name='L871'></a><a href='#L871'>871</a>
 <a name='L872'></a><a href='#L872'>872</a>
 <a name='L873'></a><a href='#L873'>873</a>
-<a name='L874'></a><a href='#L874'>874</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L874'></a><a href='#L874'>874</a>
+<a name='L875'></a><a href='#L875'>875</a>
+<a name='L876'></a><a href='#L876'>876</a>
+<a name='L877'></a><a href='#L877'>877</a>
+<a name='L878'></a><a href='#L878'>878</a>
+<a name='L879'></a><a href='#L879'>879</a>
+<a name='L880'></a><a href='#L880'>880</a>
+<a name='L881'></a><a href='#L881'>881</a>
+<a name='L882'></a><a href='#L882'>882</a>
+<a name='L883'></a><a href='#L883'>883</a>
+<a name='L884'></a><a href='#L884'>884</a>
+<a name='L885'></a><a href='#L885'>885</a>
+<a name='L886'></a><a href='#L886'>886</a>
+<a name='L887'></a><a href='#L887'>887</a>
+<a name='L888'></a><a href='#L888'>888</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1004,8 +1018,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1015,6 +1036,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1023,6 +1045,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1066,6 +1089,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1444,6 +1468,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1877,7 +1905,7 @@ function <span class="fstat-no" title="function not covered" >stopIdleMonitor(</
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >api(</span>method,url,body){
   var opts=<span class="cstat-no" title="statement not covered" >{method:method,headers:{'Content-Type':'application/json'},credentials:'include'};</span>
-<span class="cstat-no" title="statement not covered" >  if(authToken)<span class="cstat-no" title="statement not covered" >opts.headers['Authorization']='Bearer '+authToken;</span></span>
+  // IMPORTANT: auth is cookie-based (httpOnly qa_token). Avoid relying on localStorage token.
 <span class="cstat-no" title="statement not covered" >  if(body)<span class="cstat-no" title="statement not covered" >opts.body=JSON.stringify(body);</span></span>
 <span class="cstat-no" title="statement not covered" >  try{</span>
     var controller=<span class="cstat-no" title="statement not covered" >new AbortController();</span>
@@ -1887,12 +1915,21 @@ async function <span class="fstat-no" title="function not covered" >api(</span>m
 <span class="cstat-no" title="statement not covered" >    clearTimeout(tout);</span>
     var data;
 <span class="cstat-no" title="statement not covered" >    try{<span class="cstat-no" title="statement not covered" >data=await res.json();}</span>catch(e){<span class="cstat-no" title="statement not covered" >data={ok:false,msg:'Invalid response'};}</span></span>
-<span class="cstat-no" title="statement not covered" >    if(res.status===401){<span class="cstat-no" title="statement not covered" >clearAuth();<span class="cstat-no" title="statement not covered" >s</span>howScreen('auth');<span class="cstat-no" title="statement not covered" >r</span>eturn{ok:false,msg:'Session expired'};}</span></span>
+<span class="cstat-no" title="statement not covered" >    if(res.status===401){</span>
+<span class="cstat-no" title="statement not covered" >      clearAuth();</span>
+<span class="cstat-no" title="statement not covered" >      showAuthInfo('loginInfo','Session expired. Please sign in again.','error');</span>
+<span class="cstat-no" title="statement not covered" >      showScreen('auth');</span>
+<span class="cstat-no" title="statement not covered" >      return{ok:false,msg:'Session expired'};</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if(res.status===403){</span>
+<span class="cstat-no" title="statement not covered" >      return{ok:false,msg:(data&amp;&amp;data.msg)?data.msg:'Access denied'};</span>
+    }
 <span class="cstat-no" title="statement not covered" >    return data;</span>
   }catch(e){
 <span class="cstat-no" title="statement not covered" >    return{ok:false,msg:e.name==='AbortError'?'Request timeout':'Network error: '+e.message};</span>
   }
 }
+&nbsp;
 &nbsp;
 // ===================== AUTH INFO MESSAGES =====================
 function <span class="fstat-no" title="function not covered" >showAuthInfo(</span>id,msg,type){
@@ -1940,6 +1977,7 @@ function <span class="fstat-no" title="function not covered" >updateUserUI(</spa
 <span class="cstat-no" title="statement not covered" >  $$('.mgr-only').forEach(<span class="fstat-no" title="function not covered" >fu</span>nction(el){<span class="cstat-no" title="statement not covered" >el.hidden=!isM;}</span>);</span>
 <span class="cstat-no" title="statement not covered" >  if(isM)<span class="cstat-no" title="statement not covered" >loadPendingCount();</span></span>
 }
+&nbsp;
 async function <span class="fstat-no" title="function not covered" >loadPendingCount(</span>){
   var res=<span class="cstat-no" title="statement not covered" >await api('GET','/api/users/pending');</span>
 <span class="cstat-no" title="statement not covered" >  if(res.ok){var b=<span class="cstat-no" title="statement not covered" >$('#pendingBadge');<span class="cstat-no" title="statement not covered" ></span>if(b){<span class="cstat-no" title="statement not covered" >b.textContent=res.count||0;<span class="cstat-no" title="statement not covered" >b</span>.hidden=!res.count;}</span>}</span></span>
@@ -2317,6 +2355,10 @@ function <span class="fstat-no" title="function not covered" >toggleTheme(</span
 // ===================== VIEWS =====================
 function <span class="fstat-no" title="function not covered" >switchView(</span>v){
 <span class="cstat-no" title="statement not covered" >  ui.view=v;<span class="cstat-no" title="statement not covered" >$</span>$('.nl[data-v]').forEach(<span class="fstat-no" title="function not covered" >fu</span>nction(b){<span class="cstat-no" title="statement not covered" >b.classList.toggle('active',b.dataset.v===v);}</span>);</span>
+  // Render users when switching to user management view
+<span class="cstat-no" title="statement not covered" >  if(v==='users'&amp;&amp;currentUser&amp;&amp;currentUser.role==='manager'){</span>
+<span class="cstat-no" title="statement not covered" >    renderUsers();</span>
+  }
 <span class="cstat-no" title="statement not covered" >  $$('.vw').forEach(<span class="fstat-no" title="function not covered" >fu</span>nction(el){<span class="cstat-no" title="statement not covered" >el.hidden=true;}</span>);</span>
   var map=<span class="cstat-no" title="statement not covered" >{testing:'vTesting',history:'vHistory',portfolio:'vPortfolio',automation:'vAutomation',sheet:'vSheet',worksheet:'vWorksheet',users:'vUsers'};</span>
   var el=<span class="cstat-no" title="statement not covered" >document.getElementById(map[v]);<span class="cstat-no" title="statement not covered" ></span>if(el){<span class="cstat-no" title="statement not covered" >el.hidden=false;<span class="cstat-no" title="statement not covered" >e</span>l.scrollIntoView({behavior:'smooth',block:'start'});}</span></span>
@@ -2689,7 +2731,7 @@ async function <span class="fstat-no" title="function not covered" >init(</span>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T07:33:54.623Z
+                at 2026-05-11T11:18:25.024Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

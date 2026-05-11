@@ -66,7 +66,7 @@ function stopIdleMonitor(){clearTimeout(idleTimer);clearTimeout(idleWarningTimer
 
 async function api(method,url,body){
   var opts={method:method,headers:{'Content-Type':'application/json'},credentials:'include'};
-  if(authToken)opts.headers['Authorization']='Bearer '+authToken;
+  // IMPORTANT: auth is cookie-based (httpOnly qa_token). Avoid relying on localStorage token.
   if(body)opts.body=JSON.stringify(body);
   try{
     var controller=new AbortController();
@@ -76,12 +76,21 @@ async function api(method,url,body){
     clearTimeout(tout);
     var data;
     try{data=await res.json();}catch(e){data={ok:false,msg:'Invalid response'};}
-    if(res.status===401){clearAuth();showScreen('auth');return{ok:false,msg:'Session expired'};}
+    if(res.status===401){
+      clearAuth();
+      showAuthInfo('loginInfo','Session expired. Please sign in again.','error');
+      showScreen('auth');
+      return{ok:false,msg:'Session expired'};
+    }
+    if(res.status===403){
+      return{ok:false,msg:(data&&data.msg)?data.msg:'Access denied'};
+    }
     return data;
   }catch(e){
     return{ok:false,msg:e.name==='AbortError'?'Request timeout':'Network error: '+e.message};
   }
 }
+
 
 // ===================== AUTH INFO MESSAGES =====================
 function showAuthInfo(id,msg,type){
@@ -129,6 +138,7 @@ function updateUserUI(){
   $$('.mgr-only').forEach(function(el){el.hidden=!isM;});
   if(isM)loadPendingCount();
 }
+
 async function loadPendingCount(){
   var res=await api('GET','/api/users/pending');
   if(res.ok){var b=$('#pendingBadge');if(b){b.textContent=res.count||0;b.hidden=!res.count;}}
@@ -506,6 +516,10 @@ function toggleTheme(){applyTheme(ui.theme==='dark'?'light':'dark');toast('info'
 // ===================== VIEWS =====================
 function switchView(v){
   ui.view=v;$$('.nl[data-v]').forEach(function(b){b.classList.toggle('active',b.dataset.v===v);});
+  // Render users when switching to user management view
+  if(v==='users'&&currentUser&&currentUser.role==='manager'){
+    renderUsers();
+  }
   $$('.vw').forEach(function(el){el.hidden=true;});
   var map={testing:'vTesting',history:'vHistory',portfolio:'vPortfolio',automation:'vAutomation',sheet:'vSheet',worksheet:'vWorksheet',users:'vUsers'};
   var el=document.getElementById(map[v]);if(el){el.hidden=false;el.scrollIntoView({behavior:'smooth',block:'start'});}
