@@ -563,7 +563,22 @@ function setSt(id,st){var r=findT(id);if(!r)return;var now=new Date();r.test.sta
 var saveNote=deb(function(id,v){var r=findT(id);if(r){r.test.notes=v;save();}},500);
 function openM(id){var el=document.getElementById(id);if(!el)return;el.style.display='flex';requestAnimationFrame(function(){requestAnimationFrame(function(){el.classList.add('on');});});}
 function closeM(id){var el=document.getElementById(id);if(!el)return;el.classList.remove('on');setTimeout(function(){if(!el.classList.contains('on'))el.style.display='none';},320);}
-function setButtonTitles(){var iconMap={'✏️':'Edit','🗑':'Delete','⊘':'Clear','⏭':'Advance','📝':'Notes','↻':'Reset','💾':'Save','🚪':'Sign Out','☰':'Menu','🔍':'Search','☀️':'Light theme','🌙':'Dark theme','📤':'Export','📥':'Import','🔄':'Reset','✅':'Confirm','❌':'Cancel','📅':'Date','👤':'Profile'};document.querySelectorAll('button').forEach(function(btn){if(btn.title)return;var txt=(btn.getAttribute('aria-label')||btn.textContent||'').trim();if(!txt)return;txt=txt.replace(/\s+/g,' ').trim();if(iconMap[txt])btn.title=iconMap[txt];else btn.title=txt;});}
+function setButtonTitles(){
+  var iconMap={
+    '✏️':'Edit','🗑':'Delete','⊘':'Clear','⏭':'Advance','📝':'Notes','↻':'Reset','💾':'Save',
+    '🚪':'Sign Out','☰':'Menu','🔍':'Search','☀️':'Light theme','🌙':'Dark theme','📤':'Export','📥':'Import',
+    '✅':'Confirm','❌':'Cancel','📅':'Date','👤':'Profile','🔄':'Change role'
+  };
+
+  // Add tooltips for all buttons (including dynamically rendered ones).
+  document.querySelectorAll('button').forEach(function(btn){
+    if(btn.title && String(btn.title).trim())return;
+    var txt=(btn.getAttribute('aria-label')||btn.textContent||'').trim();
+    if(!txt)return;
+    txt=txt.replace(/\s+/g,' ').trim();
+    btn.title=iconMap[txt]||txt;
+  });
+}
 function getAutoTopics(text,oldTopics){var lines=String(text||'').split(/\r?\n/).map(function(t){return t.trim();}).filter(Boolean);return lines.map(function(title){var found=(oldTopics||[]).find(function(x){return x.title===title;});return{title:title,done:found?found.done:false};});}
 function computeAutoProgress(item){if(item&&item.topics&&item.topics.length){var done=item.topics.filter(function(t){return t.done;}).length;return Math.round(done/item.topics.length*100);}return item&&item.progress?item.progress:0;}
 function toggleAuTopic(id,index){var a=state.automation.find(function(x){return x.id===id;});if(!a||!a.topics||!a.topics[index])return;a.topics[index].done=!a.topics[index].done;a.progress=computeAutoProgress(a);save();renderAuto();}
@@ -603,9 +618,11 @@ async function renderUsers(){
     pCount.textContent=pRes.users?pRes.users.length:0;
     if(!pRes.users||!pRes.users.length){pList.innerHTML='<div class="empty" style="padding:20px"><p>No pending approvals 🎉</p></div>';}
     else{pList.innerHTML='';pRes.users.forEach(function(u){
-      pList.innerHTML+='<div class="um-pending-item"><div class="um-pending-av">'+esc(u.avatar||'??')+'</div><div class="um-pending-info"><div class="um-pending-name">'+esc(u.name)+'</div><div class="um-pending-email">'+esc(u.email)+'</div><div class="um-pending-date">'+esc(u.createdAt?u.createdAt.split('T')[0]:'')+'</div></div><div class="um-pending-acts"><button class="btn btn-ok btn-xs" onclick="approveUser(\''+u.id+'\')">✅ Approve</button><button class="btn btn-d btn-xs" onclick="rejectUser(\''+u.id+'\')">❌ Reject</button></div></div>';
+pList.innerHTML+='<div class="um-pending-item"><div class="um-pending-av">'+esc(u.avatar||'??')+'</div><div class="um-pending-info"><div class="um-pending-name">'+esc(u.name)+'</div><div class="um-pending-email">'+esc(u.email)+'</div><div class="um-pending-date">'+esc(u.createdAt?u.createdAt.split('T')[0]:'')+'</div></div><div class="um-pending-acts"><button type="button" class="btn btn-ok btn-xs" data-action="approve" data-user-id="'+esc(u.id)+'" title="Approve">✅ Approve</button><button type="button" class="btn btn-d btn-xs" data-action="reject" data-user-id="'+esc(u.id)+'" title="Reject">❌ Reject</button></div></div>';
+
     });}
   }
+
   var aRes=await api('GET','/api/users');
   var aBody=$('#umUsersBody');var aCount=$('#umAllCount');
   hideLoading();
@@ -616,11 +633,17 @@ async function renderUsers(){
       var isSelf=currentUser&&u.id===currentUser.id;
       var acts='';
       if(!isSelf){
-        if(u.status==='pending')acts='<button class="btn btn-ok btn-xs" onclick="approveUser(\''+u.id+'\')">✅</button><button class="btn btn-d btn-xs" onclick="rejectUser(\''+u.id+'\')">❌</button>';
-        else if(u.status==='approved')acts='<button class="btn btn-warn btn-xs" onclick="suspendUser(\''+u.id+'\')">⏸</button>';
-        else acts='<button class="btn btn-ok btn-xs" onclick="activateUser(\''+u.id+'\')">✅</button>';
-        acts+=' <button class="btn btn-g btn-xs" onclick="changeRole(\''+u.id+'\',\''+esc(u.name)+'\',\''+u.role+'\')">🔄</button>';
-        acts+=' <button class="btn btn-d btn-xs" onclick="deleteUser(\''+u.id+'\',\''+esc(u.name)+'\')">🗑</button>';
+if(u.status==='pending')acts='<button type="button" class="btn btn-ok btn-xs" data-action="approve" data-user-id="'+esc(u.id)+'" title="Approve">✅</button><button type="button" class="btn btn-d btn-xs" data-action="reject" data-user-id="'+esc(u.id)+'" title="Reject">❌</button>';
+
+        else if(u.status==='approved')acts='<button type="button" class="btn btn-warn btn-xs" data-action="suspend" data-user-id="'+esc(u.id)+'" title="Suspend">⏸</button>';
+
+        else acts='<button type="button" class="btn btn-ok btn-xs" data-action="activate" data-user-id="'+esc(u.id)+'" title="Activate">✅</button>';
+
+        acts+=' <button type="button" class="btn btn-g btn-xs" data-action="role" data-user-id="'+esc(u.id)+'" data-user-name="'+esc(u.name)+'" data-user-role="'+esc(u.role)+'" title="Change role">🔄</button>';
+
+        acts+=' <button type="button" class="btn btn-d btn-xs" data-action="delete" data-user-id="'+esc(u.id)+'" data-user-name="'+esc(u.name)+'" title="Delete">🗑</button>';
+
+
       }else{acts='<span style="font-size:10px;color:var(--mt)">You</span>';}
       aBody.innerHTML+='<tr><td><b>'+esc(u.name)+'</b></td><td>'+esc(u.email)+'</td><td><span class="um-role um-role-'+esc(u.role)+'">'+esc(u.role)+'</span></td><td><span class="um-status um-st-'+esc(u.status)+'">'+esc(u.status)+'</span></td><td style="font-size:10px">'+esc(u.createdAt?u.createdAt.split('T')[0]:'')+'</td><td style="font-size:10px">'+esc(u.lastLogin?u.lastLogin.split('T')[0]:'Never')+'</td><td style="font-size:10px">'+esc(u.approvedBy||'—')+'</td><td><div style="display:flex;gap:3px;flex-wrap:wrap">'+acts+'</div></td></tr>';
     });
@@ -805,12 +828,39 @@ function wireApp(){
   var ha=$('#hAll');if(ha)ha.addEventListener('click',function(){renderHist();});
   document.addEventListener('click',function(e){var c=e.target.closest('[data-c]');if(c)closeM(c.dataset.c);});
   $$('.ov').forEach(function(o){o.addEventListener('click',function(e){if(e.target===o){o.classList.remove('on');setTimeout(function(){if(!o.classList.contains('on'))o.style.display='none';},320);}});});
-  var root=$('#tL');
+var root=$('#tL');
   if(root){
     root.addEventListener('click',function(e){var head=e.target.closest('.cat-h');if(head){var card=head.closest('.cat');var id=card.dataset.cat;if(ui.collapsed[id])delete ui.collapsed[id];else ui.collapsed[id]=true;card.dataset.cl=ui.collapsed[id]?'1':'0';save();return;}var row=e.target.closest('.row');if(!row)return;var tid=row.dataset.t;if(e.target.closest('.ab-f')){var r=findT(tid);if(r)setSt(tid,r.test.status==='failed'?'pending':'failed');return;}if(e.target.closest('.ab-b')){var r2=findT(tid);if(r2)setSt(tid,r2.test.status==='blocked'?'pending':'blocked');return;}if(e.target.closest('.ab-s')){var r3=findT(tid);if(r3)setSt(tid,r3.test.status==='skipped'?'pending':'skipped');return;}if(e.target.closest('.ab-n')){row.dataset.n=row.dataset.n==='1'?'0':'1';if(row.dataset.n==='1'){var ta=row.querySelector('textarea');if(ta)setTimeout(function(){ta.focus();},60);}return;}if(e.target.closest('.ab-e')){openEditM(tid);return;}if(e.target.closest('.ab-del')){confirmDel(tid);return;}});
     root.addEventListener('change',function(e){if(!e.target.classList.contains('row-cb'))return;var row=e.target.closest('.row');if(row)setSt(row.dataset.t,e.target.checked?'passed':'pending');});
     root.addEventListener('input',function(e){if(e.target.tagName!=='TEXTAREA')return;var row=e.target.closest('.row');if(row)saveNote(row.dataset.t,e.target.value);});
     root.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('cat-h')){e.preventDefault();e.target.click();}});
+  }
+
+  // Manager User Management actions (no inline onclick => CSP safe)
+  var usersView=$('#vUsers');
+  if(usersView){
+    usersView.addEventListener('click',function(e){
+      var b=e.target.closest('button[data-action]');
+      if(!b)return;
+      var action=b.dataset.action;
+      var uid=b.dataset.userId;
+      if(!action||!uid)return;
+      if(action==='approve'){window.approveUser(uid);return;}
+      if(action==='reject'){window.rejectUser(uid);return;}
+      if(action==='suspend'){window.suspendUser(uid);return;}
+      if(action==='activate'){window.activateUser(uid);return;}
+      if(action==='role'){
+        var nm=b.dataset.userName||'';
+        var r=b.dataset.userRole||'employee';
+        window.changeRole(uid,nm,r);
+        return;
+      }
+      if(action==='delete'){
+        var nm2=b.dataset.userName||'';
+        window.deleteUser(uid,nm2);
+        return;
+      }
+    });
   }
   document.addEventListener('keydown',function(e){var app=$('#mainApp');if(!app||app.hidden)return;var mod=e.ctrlKey||e.metaKey;if(e.key==='Escape'){closeAll();closeUD();return;}if(mod&&e.key.toLowerCase()==='k'){e.preventDefault();switchView('testing');var s=$('#sIn');if(s)s.focus();return;}if(mod&&e.key.toLowerCase()==='n'){e.preventDefault();switchView('testing');setTimeout(openAddM,50);return;}if(mod&&e.key.toLowerCase()==='e'){e.preventDefault();openM('mExp');return;}if(mod&&e.key.toLowerCase()==='s'){e.preventDefault();api('PUT','/api/data',{data:state}).then(function(){toast('success','Saved','Synced');});return;}if(mod&&e.key.toLowerCase()==='d'){e.preventDefault();toggleTheme();return;}});
   var dd=$('#dD');if(dd)dd.textContent=tdy();
