@@ -37,3 +37,29 @@
 {"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T07:20:40.368Z"}
 {"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T08:17:59.191Z"}
 {"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T08:18:34.566Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-12T10:59:39.721Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:00:11.304Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:00:19.484Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:00:20.375Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:00:39.839Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:00:41.446Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:00:51.863Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:00:52.739Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:01:04.681Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:01:06.537Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:01:15.416Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:01:17.311Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:01:55.896Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:01:58.563Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:03:20.416Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:03:23.056Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:03:46.007Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-12T11:17:27.643Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
+{"byUser":"781220b8-f83b-4d5e-b4bb-5b9d83250755","level":"info","message":"User approved","targetUserId":"1ba21f9a-160c-4459-886b-4e15d226623d","timestamp":"2026-05-12T11:17:39.846Z"}
+{"byUser":"781220b8-f83b-4d5e-b4bb-5b9d83250755","level":"info","message":"User rejected","targetUserId":"e5647fb4-5b9b-485b-998b-20d11c88b938","timestamp":"2026-05-12T11:17:42.790Z"}
+{"byUser":"781220b8-f83b-4d5e-b4bb-5b9d83250755","level":"info","message":"User rejected","targetUserId":"85124b0a-6530-49db-97a2-e439c499bda3","timestamp":"2026-05-12T11:17:43.854Z"}
+{"byUser":"781220b8-f83b-4d5e-b4bb-5b9d83250755","level":"info","message":"User rejected","targetUserId":"21fc9ae4-ebb1-46b4-98fc-9a732bc400e6","timestamp":"2026-05-12T11:17:44.526Z"}
+{"byUser":"781220b8-f83b-4d5e-b4bb-5b9d83250755","level":"info","message":"User suspended","targetUserId":"1ba21f9a-160c-4459-886b-4e15d226623d","timestamp":"2026-05-12T11:17:47.574Z"}
+{"byUser":"781220b8-f83b-4d5e-b4bb-5b9d83250755","level":"info","message":"User activated","targetUserId":"e5647fb4-5b9b-485b-998b-20d11c88b938","timestamp":"2026-05-12T11:17:48.718Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-05-12T11:18:09.430Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T11:18:09.638Z"}
