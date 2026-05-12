@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "sessionId": "dcbae723-7f0c-4997-9e75-adcd04a9e780",
+    "userId": "781220b8-f83b-4d5e-b4bb-5b9d83250755",
+    "ip": "::ffff:127.0.0.1",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.119.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36",
+    "createdAt": "2026-05-12T12:29:00.441Z",
+    "lastActivity": "2026-05-12T12:29:28.068Z",
+    "expiresAt": "2026-06-11T12:29:00.443Z"
+  }
+]

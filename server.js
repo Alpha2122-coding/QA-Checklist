@@ -265,10 +265,18 @@ initUsers();
 // ===================== MIDDLEWARE =====================
 app.use(compression());
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || true,
+  origin: function(origin, cb) {
+    // Allow same-origin and explicit configured origins only
+    if (!origin) return cb(null, true);
+    const allowed = (process.env.CORS_ORIGIN || '').split(',').map(s => s.trim()).filter(Boolean);
+    if (!allowed.length) return cb(null, false);
+    if (allowed.includes(origin)) return cb(null, true);
+    return cb(null, false);
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 204,
 }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
