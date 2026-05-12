@@ -273,6 +273,13 @@ app.use(express.static(path.join(__dirname, 'public'), {
   etag: true
 }));
 
+// If React build exists, serve it (SPA)
+app.use(express.static(path.join(__dirname, 'public', 'dist'), {
+  maxAge: '1d',
+  etag: true
+}));
+
+
 // ===================== AUTH MIDDLEWARE =====================
 async function authMiddleware(req, res, next) {
   let token = req.cookies.qa_token;
@@ -865,10 +872,15 @@ app.use((err, req, res, next) => {
   res.status(500).json({ ok: false, msg: 'Internal server error' });
 });
 
-// ===================== CATCH-ALL: Serve index.html =====================
+// ===================== CATCH-ALL: Serve React index.html if built, else fallback to legacy index.html =====================
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  const distIndex = path.join(__dirname, 'public', 'dist', 'index.html');
+  if (fs.existsSync(distIndex)) {
+    return res.sendFile(distIndex);
+  }
+  return res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
 
 // ===================== START SERVER =====================
 if (USE_HTTPS) {

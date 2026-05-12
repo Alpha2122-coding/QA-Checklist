@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/501</span>
+                <span class='fraction'>0/505</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/193</span>
+                <span class='fraction'>0/195</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/458</span>
+                <span class='fraction'>0/462</span>
             </div>
         
             
@@ -987,7 +987,19 @@
 <a name='L922'></a><a href='#L922'>922</a>
 <a name='L923'></a><a href='#L923'>923</a>
 <a name='L924'></a><a href='#L924'>924</a>
-<a name='L925'></a><a href='#L925'>925</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L925'></a><a href='#L925'>925</a>
+<a name='L926'></a><a href='#L926'>926</a>
+<a name='L927'></a><a href='#L927'>927</a>
+<a name='L928'></a><a href='#L928'>928</a>
+<a name='L929'></a><a href='#L929'>929</a>
+<a name='L930'></a><a href='#L930'>930</a>
+<a name='L931'></a><a href='#L931'>931</a>
+<a name='L932'></a><a href='#L932'>932</a>
+<a name='L933'></a><a href='#L933'>933</a>
+<a name='L934'></a><a href='#L934'>934</a>
+<a name='L935'></a><a href='#L935'>935</a>
+<a name='L936'></a><a href='#L936'>936</a>
+<a name='L937'></a><a href='#L937'>937</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1263,7 +1275,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1855,8 +1874,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2185,6 +2209,13 @@ async function <span class="fstat-no" title="function not covered" >saveUserData
   maxAge: '1d',
   etag: true
 }));
+&nbsp;
+// If React build exists, serve it (SPA)
+<span class="cstat-no" title="statement not covered" >app.use(express.static(path.join(__dirname, 'public', 'dist'), {</span>
+  maxAge: '1d',
+  etag: true
+}));
+&nbsp;
 &nbsp;
 // ===================== AUTH MIDDLEWARE =====================
 async function <span class="fstat-no" title="function not covered" >authMiddleware(</span>req, res, next) {
@@ -2778,10 +2809,15 @@ function <span class="fstat-no" title="function not covered" >validateRegistrati
 <span class="cstat-no" title="statement not covered" >  res.status(500).json({ ok: false, msg: 'Internal server error' });</span>
 });
 &nbsp;
-// ===================== CATCH-ALL: Serve index.html =====================
+// ===================== CATCH-ALL: Serve React index.html if built, else fallback to legacy index.html =====================
 <span class="cstat-no" title="statement not covered" >app.get('*', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  res.sendFile(path.join(__dirname, 'public', 'index.html'));</span>
+  const distIndex = <span class="cstat-no" title="statement not covered" >path.join(__dirname, 'public', 'dist', 'index.html');</span>
+<span class="cstat-no" title="statement not covered" >  if (fs.existsSync(distIndex)) {</span>
+<span class="cstat-no" title="statement not covered" >    return res.sendFile(distIndex);</span>
+  }
+<span class="cstat-no" title="statement not covered" >  return res.sendFile(path.join(__dirname, 'public', 'index.html'));</span>
 });
+&nbsp;
 &nbsp;
 // ===================== START SERVER =====================
 <span class="cstat-no" title="statement not covered" >if (USE_HTTPS) {</span>
@@ -2842,7 +2878,7 @@ function <span class="fstat-no" title="function not covered" >validateRegistrati
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-11T12:16:42.299Z
+                at 2026-05-12T08:19:36.153Z
             </div>
         <script src="../prettify.js"></script>
         <script>
