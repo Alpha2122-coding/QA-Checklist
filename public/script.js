@@ -592,19 +592,203 @@ function confirmDel(id){var r=findT(id);if(!r)return;delType='test';delId=id;$('
 function execDel(){if(delType==='test'){for(var i=0;i<state.categories.length;i++){var idx=-1;for(var j=0;j<state.categories[i].tests.length;j++){if(state.categories[i].tests[j].id===delId){idx=j;break;}}if(idx!==-1){state.categories[i].tests.splice(idx,1);break;}}closeM('mDel');popCatFlt();render();}else if(delType==='project'){state.projects=state.projects.filter(function(p){return p.id!==delId;});delete state.cycles[delId];state.currentProject=state.projects[0].id;state.currentCycle=1;closeM('mDel');popProj();save();render();}else if(delType==='cycle'){var cycs=state.cycles[state.currentProject]||[];state.cycles[state.currentProject]=cycs.filter(function(c){return c.num!==delId;});var rem=state.cycles[state.currentProject];state.currentCycle=rem.length?rem[0].num:1;closeM('mDel');popCyc();save();}else if(delType==='portfolio'){state.portfolio=state.portfolio.filter(function(p){return p.id!==delId;});closeM('mDel');renderPort();save();}else if(delType==='automation'){state.automation=state.automation.filter(function(a){return a.id!==delId;});closeM('mDel');renderAuto();save();}else if(delType==='sheet'){state.sheet=state.sheet.filter(function(s){return s.id!==delId;});closeM('mDel');renderSheet();save();}else if(delType==='worksheet'){state.worksheet=state.worksheet.filter(function(w){return w.id!==delId;});closeM('mDel');renderWs();save();}delId=null;delType=null;toast('success','Deleted','Done');}
 // All renders
 function renderHist(fd){var el=$('#hR');if(!el)return;el.innerHTML='';var dates=Object.keys(state.history).sort().reverse();if(fd)dates=dates.filter(function(d){return d===fd;});if(!dates.length){el.innerHTML='<div class="empty"><div class="eic">📅</div><h3>No history</h3></div>';return;}dates.forEach(function(date){var items=state.history[date];var div=document.createElement('div');div.className='hday';var h='<div class="hdate">📅 '+date+' — '+dayName(date)+' ('+items.length+')</div>';items.forEach(function(x){h+='<div class="hitm"><span class="htme">'+esc(x.time)+'</span><span class="hst hs-'+esc(x.status)+'">'+esc(x.status)+'</span><span style="flex:1;font-weight:600;font-size:11px">'+esc(x.testName)+'</span><span style="color:var(--mt);font-size:10px">'+esc(x.user||'')+'</span></div>';});div.innerHTML=h;el.appendChild(div);});}
-function renderPort(){var el=$('#ptL');if(!el)return;el.innerHTML='';var wc=0,ac=0,au=0;state.portfolio.forEach(function(p){if(p.type==='web')wc++;else if(p.type==='app')ac++;else au++;});$('#psW').textContent=wc;$('#psA').textContent=ac;$('#psAu').textContent=au;$('#psT').textContent=state.portfolio.length;if(!state.portfolio.length){el.innerHTML='<div class="empty"><div class="eic">📊</div><h3>No projects</h3></div>';return;}state.portfolio.forEach(function(p){el.innerHTML+='<div class="pitm"><span class="ptype pt-'+esc(p.type)+'">'+esc(p.type)+'</span><div class="pinfo"><div class="pnm">'+esc(p.name)+'</div><div class="pmt">'+(p.tc||0)+' tests · '+(p.bugs||0)+' bugs</div></div><span class="psts pst-'+esc(p.status)+'">'+esc(p.status.replace(/-/g,' '))+'</span><div class="pacts"><button class="ab ab-e" onclick="editPo(\''+p.id+'\')">✏️</button><button class="ab ab-del" onclick="delPo(\''+p.id+'\')">🗑</button></div></div>';});}
+function renderPort(){
+  var el=$('#ptL');
+  if(!el)return;
+  el.innerHTML='';
+  var wc=0,ac=0,au=0;
+  state.portfolio.forEach(function(p){
+    if(p.type==='web')wc++;
+    else if(p.type==='app')ac++;
+    else au++;
+  });
+  $('#psW').textContent=wc;
+  $('#psA').textContent=ac;
+  $('#psAu').textContent=au;
+  $('#psT').textContent=state.portfolio.length;
+  if(!state.portfolio.length){
+    el.innerHTML='<div class="empty"><div class="eic">📊</div><h3>No projects</h3></div>';
+    return;
+  }
+  state.portfolio.forEach(function(p){
+    var row=document.createElement('div');
+    row.className='pitm';
+    row.dataset.pid=p.id;
+    row.innerHTML=
+      '<span class="ptype pt-'+esc(p.type)+'">'+esc(p.type)+'</span>'+
+      '<div class="pinfo"><div class="pnm">'+esc(p.name)+'</div><div class="pmt">'+(p.tc||0)+' tests · '+(p.bugs||0)+' bugs</div></div>'+
+      '<span class="psts pst-'+esc(p.status)+'">'+esc(p.status.replace(/-/g,' '))+'</span>'+
+      '<div class="pacts">'+
+        '<button class="ab ab-e" type="button" data-act="editPo">✏️</button>'+
+        '<button class="ab ab-del" type="button" data-act="delPo">🗑</button>'+
+      '</div>';
+    el.appendChild(row);
+  });
+}
+
+function wirePortfolioActions(){
+  var el=$('#ptL');
+  if(!el)return;
+  // Event delegation (CSP-safe: no inline onclick)
+  el.onclick=function(e){
+    var b=e.target && e.target.closest && e.target.closest('[data-act]');
+    if(!b)return;
+    var act=b.getAttribute('data-act');
+    var wrap=b.closest('.pitm');
+    if(!wrap)return;
+    var id=wrap.dataset.pid;
+    if(act==='editPo'){
+      if(window.editPo)window.editPo(id);
+    }else if(act==='delPo'){
+      if(window.delPo)window.delPo(id);
+    }
+  };
+}
 function savePo(){var form=$('#mPort');if(form)clearFormErrors(form);var nm=$('#poN');var ty=$('#poTy');var st=$('#poSt');var tc=$('#poTC');var bg=$('#poBg');var valid=true;valid=validateText(nm,'Project name',2)&&valid;valid=validateSelect(ty,'Project type')&&valid;valid=validateSelect(st,'Status')&&valid;valid=validateNumber(tc,'Tests')&&valid;valid=validateNumber(bg,'Bugs')&&valid;if(!valid)return;var e={id:editPortId||uid('port'),name:nm.value.trim(),type:ty.value,status:st.value,tc:parseInt(tc.value)||0,bugs:parseInt(bg.value)||0,remarks:$('#poRm').value||''};if(editPortId){var i=state.portfolio.findIndex(function(p){return p.id===editPortId;});if(i!==-1)state.portfolio[i]=e;}else state.portfolio.push(e);editPortId=null;closeM('mPort');renderPort();save();toast('success','Saved','Done');}
 window.editPo=function(id){var p=state.portfolio.find(function(x){return x.id===id;});if(!p)return;editPortId=id;$('#mPoT').textContent='✏️ Edit';$('#poN').value=p.name;$('#poTy').value=p.type;$('#poSt').value=p.status;$('#poTC').value=p.tc||0;$('#poBg').value=p.bugs||0;$('#poRm').value=p.remarks||'';openM('mPort');};
 window.delPo=function(id){delType='portfolio';delId=id;$('#dMsg').textContent='Delete?';openM('mDel');};
-function renderAuto(){var el=$('#auL');if(!el)return;el.innerHTML='';if(!state.automation.length){el.innerHTML='<div class="empty"><div class="eic">🤖</div><h3>No suites</h3></div>';return;}state.automation.forEach(function(a){var progress=computeAutoProgress(a);var c=progress>=80?'var(--ok)':progress>=50?'var(--pm)':'var(--wn)';var topicsHtml='';if(a.topics&&a.topics.length){topicsHtml='<div class="topic-list">';a.topics.forEach(function(t,i){topicsHtml+='<label class="topic-item"><input type="checkbox" '+(t.done?'checked':'')+' onchange="toggleAuTopic('+JSON.stringify(a.id)+','+i+')"><span>'+esc(t.title)+'</span></label>';});topicsHtml+='</div>';}el.innerHTML+='<div class="aitm"><span class="atool">'+esc(a.tool)+'</span><span class="atype">'+esc(a.type)+'</span><div class="ainfo"><div class="anm">'+esc(a.name)+'</div><div class="amt">'+(a.remarks?esc(a.remarks):'—')+'</div>'+(a.topics&&a.topics.length?'<div class="topic-summary">'+a.topics.filter(function(t){return t.done;}).length+' / '+a.topics.length+' topics completed</div>':'')+'</div><div class="aprog"><div class="aprog-bar"><div class="aprog-fill" style="width:'+progress+'%;background:'+c+'"></div></div><div class="aprog-val" style="color:'+c+'">'+progress+'%</div></div>'+topicsHtml+'<div class="pacts"><button class="ab ab-e" onclick="editAu('+JSON.stringify(a.id)+')">✏️</button><button class="ab ab-del" onclick="delAu('+JSON.stringify(a.id)+')">🗑</button></div></div>';});}
+function renderAuto(){
+  var el=$('#auL');
+  if(!el)return;
+  el.innerHTML='';
+  if(!state.automation.length){
+    el.innerHTML='<div class="empty"><div class="eic">🤖</div><h3>No suites</h3></div>';
+    return;
+  }
+
+  state.automation.forEach(function(a){
+    var progress=computeAutoProgress(a);
+    var c=progress>=80?'var(--ok)':progress>=50?'var(--pm)':'var(--wn)';
+    var topicsHtml='';
+
+    if(a.topics&&a.topics.length){
+      topicsHtml='<div class="topic-list">';
+      a.topics.forEach(function(t,i){
+        topicsHtml+='<label class="topic-item">'+
+          '<input type="checkbox" '+(t.done?'checked':'')+' data-au-topic="'+esc(a.id)+'" data-au-idx="'+i+'">'+
+          '<span>'+esc(t.title)+'</span>'+
+          '</label>';
+      });
+      topicsHtml+='</div>';
+    }
+
+    var wrap=document.createElement('div');
+    wrap.className='aitm';
+    wrap.dataset.aid=a.id;
+    wrap.innerHTML=
+      '<span class="atool">'+esc(a.tool)+'</span>'+
+      '<span class="atype">'+esc(a.type)+'</span>'+
+      '<div class="ainfo">'+
+        '<div class="anm">'+esc(a.name)+'</div>'+
+        '<div class="amt">'+(a.remarks?esc(a.remarks):'—')+'</div>'+
+        (a.topics&&a.topics.length?'<div class="topic-summary">'+a.topics.filter(function(t){return t.done;}).length+' / '+a.topics.length+' topics completed</div>':'')+
+      '</div>'+
+      '<div class="aprog">'+
+        '<div class="aprog-bar"><div class="aprog-fill" style="width:'+progress+'%;background:'+c+'"></div></div>'+
+        '<div class="aprog-val" style="color:'+c+'">'+progress+'%</div>'+
+      '</div>'+
+      topicsHtml+
+      '<div class="pacts">'+
+        '<button class="ab ab-e" type="button" data-act="editAu">✏️</button>'+
+        '<button class="ab ab-del" type="button" data-act="delAu">🗑</button>'+
+      '</div>';
+
+    el.appendChild(wrap);
+  });
+}
+
+function wireAutomationActions(){
+  var el=$('#auL');
+  if(!el)return;
+
+  // actions: edit/del
+  el.onclick=function(e){
+    var b=e.target && e.target.closest && e.target.closest('[data-act]');
+    if(!b)return;
+    var wrap=b.closest('.aitm');
+    if(!wrap)return;
+    var aid=wrap.dataset.aid;
+    var act=b.getAttribute('data-act');
+    if(act==='editAu' && window.editAu) window.editAu(aid);
+    if(act==='delAu' && window.delAu) window.delAu(aid);
+  };
+
+  // topics checkboxes
+  el.addEventListener('change',function(e){
+    var t=e.target;
+    if(!t || !t.matches || !t.matches('input[type="checkbox"][data-au-topic][data-au-idx]')) return;
+    var aid=t.getAttribute('data-au-topic');
+    var idx=parseInt(t.getAttribute('data-au-idx'),10);
+    if(isNaN(idx)) return;
+    if(window.toggleAuTopic) window.toggleAuTopic(aid,idx);
+  });
+}
+
+
 function saveAu(){var form=$('#mAuto');if(form)clearFormErrors(form);var nm=$('#auN');var tool=$('#auTool');var type=$('#auType');var prog=$('#auProg');var valid=true;valid=validateText(nm,'Suite name',3)&&valid;valid=validateSelect(tool,'Tool')&&valid;valid=validateSelect(type,'Suite type')&&valid;valid=validateNumber(prog,'Progress')&&valid;var progress=parseInt(prog.value)||0;if(progress<0||progress>100){showFieldError(prog,'Progress must be between 0 and 100');valid=false;}if(!valid)return;var oldTopics=editAutoId?(state.automation.find(function(a){return a.id===editAutoId;})||{}).topics||[]:[];var topics=getAutoTopics($('#auTopics')?$('#auTopics').value:'',oldTopics);if(topics.length)progress=computeAutoProgress({topics:topics});var e={id:editAutoId||uid('auto'),name:nm.value.trim(),tool:tool.value,type:type.value,progress:progress,remarks:$('#auRm').value||'',topics:topics};if(editAutoId){var i=state.automation.findIndex(function(a){return a.id===editAutoId;});if(i!==-1)state.automation[i]=e;}else state.automation.push(e);editAutoId=null;closeM('mAuto');renderAuto();save();toast('success','Saved','Done');}
 window.editAu=function(id){var a=state.automation.find(function(x){return x.id===id;});if(!a)return;editAutoId=id;$('#mAuT').textContent='✏️ Edit';$('#auN').value=a.name;$('#auTool').value=a.tool;$('#auType').value=a.type;$('#auProg').value=a.progress||0;$('#auProgVal').textContent=(a.progress||0)+'%';$('#auRm').value=a.remarks||'';$('#auTopics').value=(a.topics||[]).map(function(t){return t.title;}).join('\n');openM('mAuto');};
 window.delAu=function(id){delType='automation';delId=id;$('#dMsg').textContent='Delete?';openM('mDel');};
-function renderSheet(){var tb=$('#shB');if(!tb)return;tb.innerHTML='';if(!state.sheet.length){tb.innerHTML='<tr><td colspan="11" style="text-align:center;padding:32px;color:var(--mt)">No entries</td></tr>';return;}state.sheet.forEach(function(s){tb.innerHTML+='<tr><td><b>'+esc(s.name)+'</b></td><td>'+esc(s.type)+'</td><td>'+esc(s.received||'—')+'</td><td>'+esc(s.mailed||'—')+'</td><td>'+esc(s.started||'—')+'</td><td>'+esc(s.submitted||'—')+'</td><td style="text-align:center;font-weight:800">'+(s.cycles||0)+'</td><td style="text-align:center;font-weight:800;color:var(--no)">'+(s.bugs||0)+'</td><td><span class="shst sh-'+esc(s.status)+'">'+esc(s.status)+'</span></td><td style="color:var(--mt)">'+esc(s.remarks||'—')+'</td><td><div style="display:flex;gap:4px"><button class="ab ab-e" onclick="editSh(\''+s.id+'\')">✏️</button><button class="ab ab-del" onclick="delSh(\''+s.id+'\')">🗑</button></div></td></tr>';});}
+function renderSheet(){
+  var tb=$('#shB');
+  if(!tb)return;
+  tb.innerHTML='';
+  if(!state.sheet.length){
+    tb.innerHTML='<tr><td colspan="11" style="text-align:center;padding:32px;color:var(--mt)">No entries</td></tr>';
+    return;
+  }
+
+  state.sheet.forEach(function(s){
+    tb.innerHTML +=
+      '<tr>'+
+        '<td><b>'+esc(s.name)+'</b></td>'+
+        '<td>'+esc(s.type)+'</td>'+
+        '<td>'+esc(s.received||'—')+'</td>'+
+        '<td>'+esc(s.mailed||'—')+'</td>'+
+        '<td>'+esc(s.started||'—')+'</td>'+
+        '<td>'+esc(s.submitted||'—')+'</td>'+
+        '<td style="text-align:center;font-weight:800">'+(s.cycles||0)+'</td>'+
+        '<td style="text-align:center;font-weight:800;color:var(--no)">'+(s.bugs||0)+'</td>'+
+        '<td><span class="shst sh-'+esc(s.status)+'">'+esc(s.status)+'</span></td>'+
+        '<td style="color:var(--mt)">'+esc(s.remarks||'—')+'</td>'+
+        '<td>'+
+          '<div style="display:flex;gap:4px">'+
+            '<button class="ab ab-e" type="button" data-act="editSh" data-id="'+esc(s.id)+'">✏️</button>'+
+            '<button class="ab ab-del" type="button" data-act="delSh" data-id="'+esc(s.id)+'">🗑</button>'+
+          '</div>'+
+        '</td>'+
+      '</tr>';
+  });
+}
+
 function saveSh(){var form=$('#mSheet');if(form)clearFormErrors(form);var nm=$('#shN');var ty=$('#shTy');var st=$('#shSt');var rc=$('#shRc');var valid=true;valid=validateText(nm,'Project name',2)&&valid;valid=validateSelect(ty,'Type')&&valid;valid=validateSelect(st,'Status')&&valid;valid=validateDate(rc,'Received')&&valid;if(!valid)return;var e={id:editSheetId||uid('sh'),name:nm.value.trim(),type:ty.value,status:st.value,received:rc.value||'',mailed:$('#shMl').value||'',started:$('#shSr').value||'',submitted:$('#shSb').value||'',cycles:parseInt($('#shCy').value)||0,bugs:parseInt($('#shBg').value)||0,remarks:$('#shRm').value||''};if(editSheetId){var i=state.sheet.findIndex(function(s){return s.id===editSheetId;});if(i!==-1)state.sheet[i]=e;}else state.sheet.push(e);editSheetId=null;closeM('mSheet');renderSheet();save();toast('success','Saved','Done');}
 window.editSh=function(id){var s=state.sheet.find(function(x){return x.id===id;});if(!s)return;editSheetId=id;$('#mShT').textContent='✏️ Edit';$('#shN').value=s.name;$('#shTy').value=s.type;$('#shSt').value=s.status;$('#shRc').value=s.received||'';$('#shMl').value=s.mailed||'';$('#shSr').value=s.started||'';$('#shSb').value=s.submitted||'';$('#shCy').value=s.cycles||0;$('#shBg').value=s.bugs||0;$('#shRm').value=s.remarks||'';openM('mSheet');};
 window.delSh=function(id){delType='sheet';delId=id;$('#dMsg').textContent='Delete?';openM('mDel');};
-function renderWs(){var tb=$('#wsB');if(!tb)return;tb.innerHTML='';if(!state.worksheet.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:32px;color:var(--mt)">No entries</td></tr>';return;}state.worksheet.slice().sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(w){tb.innerHTML+='<tr><td><b>'+esc(w.date)+'</b></td><td style="color:var(--ac);font-weight:700">'+esc(w.day||dayName(w.date))+'</td><td style="font-weight:700">'+esc(w.title)+'</td><td style="white-space:normal;max-width:420px;color:var(--tx2)">'+esc(w.desc||'')+'</td><td><div style="display:flex;gap:4px"><button class="ab ab-e" onclick="editWs(\''+w.id+'\')">✏️</button><button class="ab ab-del" onclick="delWs(\''+w.id+'\')">🗑</button></div></td></tr>';});}
+function renderWs(){
+  var tb=$('#wsB');
+  if(!tb)return;
+  tb.innerHTML='';
+  if(!state.worksheet.length){
+    tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:32px;color:var(--mt)">No entries</td></tr>';
+    return;
+  }
+
+  state.worksheet.slice().sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(w){
+    tb.innerHTML +=
+      '<tr>'+
+        '<td><b>'+esc(w.date)+'</b></td>'+
+        '<td style="color:var(--ac);font-weight:700">'+esc(w.day||dayName(w.date))+'</td>'+
+        '<td style="font-weight:700">'+esc(w.title)+'</td>'+
+        '<td style="white-space:normal;max-width:420px;color:var(--tx2)">'+esc(w.desc||'')+'</td>'+
+        '<td>'+
+          '<div style="display:flex;gap:4px">'+
+            '<button class="ab ab-e" type="button" data-act="editWs" data-id="'+esc(w.id)+'">✏️</button>'+
+            '<button class="ab ab-del" type="button" data-act="delWs" data-id="'+esc(w.id)+'">🗑</button>'+
+          '</div>'+
+        '</td>'+
+      '</tr>';
+  });
+}
+
 function saveWs(){var form=$('#mWs');if(form)clearFormErrors(form);var t=$('#wsTitle');var d=$('#wsD');var valid=true;valid=validateText(t,'Title',3)&&valid;valid=validateDate(d,'Date')&&valid;if(!valid)return;var e={id:editWsId||uid('ws'),date:d.value||ds(),day:dayName(d.value||ds()),title:t.value.trim(),desc:$('#wsDesc').value||''};if(editWsId){var i=state.worksheet.findIndex(function(w){return w.id===editWsId;});if(i!==-1)state.worksheet[i]=e;}else state.worksheet.push(e);editWsId=null;closeM('mWs');renderWs();save();toast('success','Saved','Done');}
 window.editWs=function(id){var w=state.worksheet.find(function(x){return x.id===id;});if(!w)return;editWsId=id;$('#mWsT').textContent='✏️ Edit';$('#wsD').value=w.date;$('#wsTitle').value=w.title;$('#wsDesc').value=w.desc||'';openM('mWs');};
 window.delWs=function(id){delType='worksheet';delId=id;$('#dMsg').textContent='Delete?';openM('mDel');};

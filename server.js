@@ -37,11 +37,16 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'", "cdnjs.cloudflare.com"],
-      styleSrc: ["'self'", "'unsafe-inline'", "fonts.googleapis.com"],
-      fontSrc: ["'self'", "fonts.googleapis.com", "fonts.gstatic.com"],
+      // NOTE: keep scriptSrc strict; if legacy requires inline, we will remove it next.
+      scriptSrc: ["'self'", "https://cdnjs.cloudflare.com"],
+      styleSrc: ["'self'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
       imgSrc: ["'self'", "data:", "blob:"],
-      connectSrc: ["'self'"]
+      connectSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      baseUri: ["'self'"],
+      frameAncestors: ["'none'"],
+      formAction: ["'self'"],
     }
   }
 }));
@@ -913,13 +918,13 @@ if (USE_HTTPS) {
     console.log('║   🧪 QA Checklist Pro Server         ║');
     console.log('║   ⚠️  HTTP Mode (use HTTPS in prod)  ║');
     console.log('║                                      ║');
-    console.log(`║   🌐 http://localhost:${PORT}            ║`);
+    console.log(`║   🌐 http://localhost:${PORT}        ║`);
     console.log('║                                      ║');
     console.log('║   📧 Admin: admin@qa.com             ║');
     console.log('║   🔑 Pass:  admin123                 ║');
     console.log('║                                      ║');
     console.log('║   Roles: Manager, Employee           ║');
-    console.log('║   New signups need manager approval   ║');
+    console.log('║   New signups need manager approval  ║');
     console.log('╚══════════════════════════════════════╝');
     console.log('');
   });
