@@ -67,3 +67,5 @@
 {"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-12T12:28:46.404Z"}
 {"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-12T12:29:00.443Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
 {"level":"info","message":"SIGINT received, shutting down gracefully","timestamp":"2026-05-12T12:29:31.449Z"}
+{"level":"info","message":"Server started (HTTP)","port":3000,"timestamp":"2026-05-13T04:55:44.846Z"}
+{"email":"admin@qa.com","level":"info","message":"User logged in","timestamp":"2026-05-13T04:56:18.403Z","userId":"781220b8-f83b-4d5e-b4bb-5b9d83250755"}
