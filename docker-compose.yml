@@ -1,0 +1,48 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: qa_checklist
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/qa_checklist?schema=public
+      JWT_SECRET: secret-from-vault
+      PORT: 4000
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: npm run dev --workspace apps/backend
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    depends_on:
+      - backend
+    ports:
+      - '5173:4173'
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: npm run dev --workspace apps/frontend -- --host 0.0.0.0
+
+volumes:
+  db-data:
+    name: qa-checklist-db

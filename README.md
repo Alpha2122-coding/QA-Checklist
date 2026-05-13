@@ -1,202 +1,80 @@
-# QA Checklist Pro v2.1.0
+# QA Checklist Pro
 
-A professional, secure, and feature-rich QA test management application with authentication, role-based access control, and comprehensive testing capabilities.
+A modern, production-ready QA checklist platform rebuilt as a TypeScript monorepo with separate backend and frontend services.
 
-## 🚀 Features
+## What's included
 
-### Core Functionality
-- **Test Execution** - Execute and track test cases with multiple status options (Passed, Failed, Blocked, Skipped, Pending)
-- **Project Management** - Organize tests by projects and cycles
-- **Portfolio Tracking** - Track multiple projects with status and progress
-- **Automation Suite Management** - Manage automation testing efforts with topic tracking
-- **Project Sheet** - Track project lifecycle with dates and milestones
-- **Daily Worksheet** - Record daily activities and work logs
-- **Execution History** - View historical test execution records
+- **Backend**: Express + TypeScript + Prisma + PostgreSQL
+- **Frontend**: React + TypeScript + Vite + Tailwind CSS
+- **Auth**: JWT-based login/register flows
+- **CRUD**: Checklist management for core QA workflows
+- **Dev parity**: Docker Compose with Postgres, backend, and frontend
+- **Testing**: Jest + Supertest for backend, Jest + React Testing Library for frontend
+- **CI**: GitHub Actions workflow for lint/test/build
+- **Docs**: architecture, deployment, design system, handover, bug triage
 
-### User Management
-- **Role-Based Access Control** - Manager and Employee roles with different permissions
-- **User Approval Workflow** - New registrations require manager approval
-- **Session Management** - View and manage active sessions
-- **Profile Management** - Update name and password
+## Quick start
 
-### Security Features
-- **JWT Authentication** - Secure token-based authentication
-- **Password Hashing** - bcrypt with 12 salt rounds
-- **Rate Limiting** - Protection against brute force attacks
-- **Input Sanitization** - XSS and injection prevention
-- **HTTPS Support** - Optional TLS/SSL encryption
-- **CSRF Protection** - Cross-site request forgery prevention
-- **Content Security Policy** - CSP headers for enhanced security
-- **Session Timeout** - Automatic logout after inactivity
-
-### Export & Import
-- **Multiple Formats** - Export to Excel (XLSX), CSV, Word (DOC), HTML
-- **Import Support** - Import from JSON, Excel, CSV, Word/Text files
-- **Drag & Drop** - Easy file import with drag and drop
-
-### User Experience
-- **Dark/Light Theme** - Toggle between themes with persistence
-- **Responsive Design** - Works on desktop, tablet, and mobile
-- **Keyboard Shortcuts** - Efficient workflow with keyboard navigation
-- **Real-time Search** - Filter tests by name, category, priority, status
-- **Timer** - Built-in timer for test sessions
-- **Toast Notifications** - Non-intrusive status messages
-
-## 📋 Prerequisites
-
-- Node.js 14.x or higher
-- npm 6.x or higher
-
-## 🛠️ Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Alpha2122-coding/QA-Checklist.git
-   cd QA-Checklist
-   ```
-
-2. **Install dependencies**
+1. Install dependencies:
    ```bash
    npm install
    ```
-
-3. **Configure environment**
+2. Copy example environment files:
    ```bash
    cp .env.example .env
-   # Edit .env with your configuration
+   cp apps/backend/.env.example apps/backend/.env
+   cp apps/frontend/.env.example apps/frontend/.env
    ```
-
-4. **Start the server**
+3. Start development services:
    ```bash
-   npm start
+   npm run dev
    ```
+4. Open the app:
+   - Frontend: `http://localhost:5173`
+   - Backend health: `http://localhost:4000/api/health`
 
-5. **Access the application**
-   - Open browser to `http://localhost:3000`
-   - Default admin credentials: `admin@qa.com` / `admin123`
-
-## 🔒 Security Configuration
-
-### Environment Variables
-
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | `3000` |
-| `JWT_SECRET` | JWT signing secret (min 32 chars) | Auto-generated |
-| `HTTPS_KEY` | Path to HTTPS private key | None |
-| `HTTPS_CERT` | Path to HTTPS certificate | None |
-| `CORS_ORIGIN` | Allowed CORS origin | `*` |
-| `LOG_LEVEL` | Logging level | `info` |
-
-### HTTPS Setup (Production)
+## Local Docker development
 
 ```bash
-# Generate self-signed certificate (for development)
-mkdir cert
-openssl req -x509 -newkey rsa:4096 -keyout cert/key.pem -out cert/cert.pem -days 365 -nodes
+docker compose up --build
 ```
 
-## 🧪 Testing
+## Packages overview
 
-Run the comprehensive test suite:
+- `apps/backend` - API server with Prisma migrations and seed support
+- `apps/frontend` - UI app with routes for login, registration, and dashboard
+- `docs/` - supporting design, architecture, deployment, and onboarding docs
 
-```bash
-# Run all tests with coverage
-npm test
+## Scripts
 
-# Run tests in watch mode
-npm run test:watch
+- `npm run dev` — run backend and frontend concurrently
+- `npm run build` — build both backend and frontend
+- `npm test` — run backend + frontend tests
+- `npm run lint` — lint both workspaces
+- `npm run format` — run prettier formatting across workspace
 
-# Run security tests
-npm run test:security
-```
+## Key files
 
-## 📁 Project Structure
+- `docker-compose.yml` — local dev environment
+- `apps/backend/prisma/schema.prisma` — database schema
+- `apps/backend/prisma/seed.ts` — seed sample data
+- `apps/frontend/src/pages` — user-facing application flows
+- `.github/workflows/ci.yml` — CI pipeline for test and build gating
 
-```
-QA-Checklist/
-├── server.js           # Express server with API endpoints
-├── package.json        # Dependencies and scripts
-├── .env.example        # Environment configuration template
-├── public/
-│   ├── index.html      # Main HTML file
-│   ├── script.js       # Client-side JavaScript
-│   └── styles.css      # CSS styles with dark/light themes
-├── data/
-│   ├── users.json      # User database
-│   ├── sessions.json   # Active sessions
-│   ├── jwt_secret.txt  # JWT signing secret
-│   └── appdata/        # User application data
-├── logs/               # Application logs
-└── tests/              # Test suite
-    └── server.test.js  # Server tests
-```
+## Notes
 
-## 🎯 Default Data
+- The app is designed for a PostgreSQL backend; update `DATABASE_URL` in `.env`.
+- Use a strong `JWT_SECRET` for production deployments.
+- Frontend API requests originate from `VITE_API_URL`.
 
-The application comes with pre-populated test categories:
+## Additional documentation
 
-### Web Testing Categories
-- Login & Authentication (20 tests)
-- Registration (20 tests)
-- Form Validation (30 tests)
-- Navigation (20 tests)
-- Data Operations (20 tests)
-- Search & Filters (20 tests)
-- UX & Interactions (20 tests)
-- Responsive Design (16 tests)
-- Browser Compatibility (15 tests)
-- Accessibility (22 tests)
-- Security (16 tests)
-- Performance (8 tests)
-- Error Handling (10 tests)
-- File Upload (16 tests)
-- Pagination (15 tests)
-- Checkout (19 tests)
-- User Profile (12 tests)
-- Email (11 tests)
-- i18n (10 tests)
-
-### App Testing Categories
-- Installation (11 tests)
-- App Auth (12 tests)
-- App Nav (10 tests)
-- Offline Mode (10 tests)
-- Notifications (10 tests)
-- Permissions (10 tests)
-- Gestures (9 tests)
-- Devices (10 tests)
-- Background Mode (9 tests)
-- App Performance (8 tests)
-- Camera (8 tests)
-- Updates (5 tests)
-
-## 🔑 Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Ctrl+K` | Focus search |
-| `Ctrl+N` | Add new test |
-| `Ctrl+E` | Export data |
-| `Ctrl+S` | Save/sync data |
-| `Ctrl+D` | Toggle theme |
-| `Escape` | Close modals |
-
-## 👥 User Roles
-
-### Manager
-- Approve/reject new user registrations
-- Suspend/activate users
-- Change user roles
-- Delete users
-- View all user sessions
-- Access all features
-
-### Employee
-- Execute tests
-- Manage own profile
-- Export/import data
-- View own sessions
+- `docs/architecture.md`
+- `docs/deployment.md`
+- `docs/design-system.md`
+- `handover-checklist.md`
+- `docs/bug-triage.md`
+- `CHANGELOG.md`
 
 ## 🚨 Security Best Practices
 
