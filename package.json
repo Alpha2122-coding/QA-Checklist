@@ -1,18 +1,23 @@
 {
   "name": "qa-checklist-pro",
-  "version": "2.0.0",
-  "description": "QA Checklist with Authentication & API",
-  "main": "server.js",
+  "private": true,
+  "version": "3.0.0",
+  "workspaces": [
+    "apps/backend",
+    "apps/frontend"
+  ],
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "concurrently \"npm run dev --workspace apps/backend\" \"npm run dev --workspace apps/frontend\"",
+    "build": "npm run build --workspace apps/backend && npm run build --workspace apps/frontend",
+    "start": "npm run build --workspace apps/backend && npm run start --workspace apps/backend",
+    "test": "npm run test --workspace apps/backend && npm run test --workspace apps/frontend",
+    "lint": "npm run lint --workspace apps/backend && npm run lint --workspace apps/frontend",
+    "format": "npm run format --workspace apps/backend && npm run format --workspace apps/frontend"
   },
-  "dependencies": {
-    "express": "^4.18.2",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "uuid": "^9.0.0"
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.1.4",
+    "typescript": "^5.6.2"
   }
 }

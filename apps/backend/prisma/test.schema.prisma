@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String    @id @default(uuid())
+  name       String
+  email      String    @unique
+  password   String
+  role       String    @default("EMPLOYEE")
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  checklists Checklist[]
+}
+
+model Checklist {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  status      String   @default("PENDING")
+  owner       User     @relation(fields: [ownerId], references: [id])
+  ownerId     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
