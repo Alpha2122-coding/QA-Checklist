@@ -3,6 +3,7 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  setupFiles: ['<rootDir>/jest.env.ts'],
   testMatch: ['<rootDir>/tests/**/*.test.ts'],
   collectCoverage: true,
   coverageDirectory: '<rootDir>/coverage',

@@ -8,5 +8,6 @@ test('renders login page by default', () => {
       <App />
     </MemoryRouter>
   );
-  expect(screen.getByText(/sign in to your account/i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /welcome back/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /sign in/i })).toBeInTheDocument();
 });

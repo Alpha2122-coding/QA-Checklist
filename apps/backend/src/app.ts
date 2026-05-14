@@ -12,7 +12,23 @@ export const app = express();
 
 app.use(helmet());
 app.use(json());
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173', credentials: true }));
+
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
+const allowedOrigins = [frontendUrl, 'http://localhost:5173', 'http://127.0.0.1:5173'];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin) || origin.startsWith('http://192.168.') || origin.startsWith('http://10.')) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true
+  })
+);
+
 app.use(loggerMiddleware);
 
 const apiLimiter = rateLimit({
